@@ -1,5 +1,7 @@
 package com.apps;
 
+import java.util.Objects;
+
 public class Node {
 
 	private int data;
@@ -44,6 +46,8 @@ public class Node {
 
 	public void setLeft(Node left) {
 		this.left = left;
+		if(Objects.nonNull(this.left))
+			this.left.setParent(this);
 	}
 
 
@@ -54,6 +58,8 @@ public class Node {
 
 	public void setRight(Node right) {
 		this.right = right;
+		if(Objects.nonNull(this.right))
+			this.right.setParent(this);
 	}
 
 	@Override
